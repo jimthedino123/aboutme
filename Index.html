@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All About Tyler</title>
+<style>
+  body {
+    background-color: #e6f7e7;
+    opacity: 0.95;
+    background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #e6f7e7 10px), repeating-linear-gradient(#30ac5b55, #30ac5b);
+    font-family: 'Poppins', sans-serif;
+    color: #222;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    text-align: center;
+    padding: 50px 20px 20px;
+  }
+
+  .pfp {
+    width: 150px;
+    height: 150px;
+    background-color: #d1f0d5;
+    border: 5px solid #3f9656;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    background-image: url('pfp.png');
+    background-size: cover;
+    background-position: center;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    color: #3f9656;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1.2em;
+  }
+
+  section {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 700px;
+    box-shadow: 0 4px 10px rgba(63, 150, 86, 0.2);
+  }
+
+  section h2 {
+    color: #3f9656;
+    margin-bottom: 10px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  ul li {
+    background: #dff5e1;
+    border: 1px solid #b5e4b8;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 12px;
+    transition: transform 0.2s;
+  }
+
+  ul li:hover {
+    transform: scale(1.02);
+  }
+
+  footer {
+    text-align: center;
+    padding: 40px 10px;
+  }
+
+  .embed {
+    background: #f0fff0;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 780px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  .yt-embed {
+    background: #f9fff9;
+    border: 1px solid #b5e4b8;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 12px;
+    text-decoration: none;
+    color: #222;
+    transition: background 0.3s;
+  }
+
+  .yt-embed:hover {
+    background: #e7f9e8;
+  }
+
+  .yt-embed img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+
+  .yt-text h2 {
+    margin: 0;
+    color: #3f9656;
+  }
+
+  .yt-text p {
+    margin: 3px 0 0;
+    color: #555;
+    font-size: 0.9em;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="pfp"></div>
+  <h1>Tyler</h1>
+  <p>Age: <span id="age"></span></p>
+</header>
+
+<section>
+  <h2>Favourite Foods</h2>
+  <ul>
+    <li>Pancakes</li>
+    <li>BLTs</li>
+    <li>Honeydew Melon</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Favourite Drinks</h2>
+  <ul>
+    <li>Water</li>
+    <li>Iced Latte</li>
+    <li>Passionfruit and Strawberry Boba</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Favourite Colour</h2>
+  <p style="font-weight: bold; color:#3f9656;">Green (#3f9656)</p>
+</section>
+
+<section>
+  <h2>Places I Want to Go</h2>
+  <ul>
+    <li>Finland</li>
+    <li>Canada</li>
+    <li>Falklands</li>
+    <li>Germany</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Favourite Shows & Movies</h2>
+  <ul>
+    <li>Moomins (1990 version)</li>
+    <li>SpongeBob SquarePants</li>
+    <li>Elio</li>
+  </ul>
+</section>
+
+<footer>
+  <div class="embed">
+    <!-- TikTok -->
+    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@ty.connor29" data-unique-id="ty.connor29" data-embed-from="embed_page" data-embed-type="creator" style="max-width:780px; min-width:288px;"> 
+      <section> 
+        <a target="_blank" href="https://www.tiktok.com/@ty.connor29?refer=creator_embed">@ty.connor29</a> 
+      </section> 
+    </blockquote> 
+    <script async src="https://www.tiktok.com/embed.js"></script>
+  </div>
+
+  <div class="embed">
+    <!-- YouTube -->
+    <a class="yt-embed" href="https://www.youtube.com/@IRLcabbage" target="_blank">
+      <img src="https://www.gstatic.com/youtube/img/branding/youtubelogo/svg/youtubelogo.svg" alt="YouTube Logo">
+      <div class="yt-text">
+        <h2>@IRLcabbage</h2>
+        <p>Visit YouTube Channel</p>
+      </div>
+    </a>
+  </div>
+</footer>
+
+<script>
+  // Auto age updater
+  function calculateAge(birthDate) {
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    return age;
+  }
+
+  const birthday = new Date('2011-10-29');
+  document.getElementById('age').textContent = calculateAge(birthday);
+</script>
+
+</body>
+</html>
