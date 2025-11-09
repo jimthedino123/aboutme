@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -8,9 +9,9 @@
   /* 🌿 Page Theme */
   body {
     background-color: #e8f7e6;
-opacity: 0.8;
-background-image: radial-gradient(circle at center center, #A1D7A2, #e8f7e6), repeating-radial-gradient(circle at center center, #559b56, #559b56, 10px, transparent 20px, transparent 10px);
-background-blend-mode: multiply;
+    opacity: 0.8;
+    background-image: radial-gradient(circle at center center, #c8e8c9, #e8f7e6), repeating-radial-gradient(circle at center center, #a8d4a9, #a8d4a9, 10px, transparent 20px, transparent 10px);
+    background-blend-mode: multiply;
     font-family: 'Poppins', sans-serif;
     color: #2c2c2c;
     margin: 0;
@@ -20,170 +21,165 @@ background-blend-mode: multiply;
     align-items: center;
   }
 
-  /* 🧑 Header */
-  header {
-    text-align: center;
-    padding: 60px 20px 40px;
-    max-width: 900px;
-    width: 90%;
-  }
+/* 🧑 Header */
+header {
+text-align: center;
+padding: 60px 20px 40px;
+max-width: 900px;
+width: 90%;
+}
 
-  .pfp {
-    width: 160px;
-    height: 160px;
-    background-color: #d9f4dc;
-    border: 5px solid #3f9656;
-    border-radius: 50%;
-    margin: 0 auto 25px;
-    background-image: url('pfp.png');
-    background-size: cover;
-    background-position: center;
-    box-shadow: 0 4px 15px rgba(63,150,86,0.2);
-  }
+.pfp {
+width: 160px;
+height: 160px;
+background-color: #d9f4dc;
+border: 5px solid #3f9656;
+border-radius: 50%;
+margin: 0 auto 25px;
+background-image: url(‘pfp.png’);
+background-size: cover;
+background-position: center;
+box-shadow: 0 4px 15px rgba(63,150,86,0.2);
+}
 
-  h1 {
-    font-size: 2.8em;
-    color: #3f9656;
-    margin-bottom: 8px;
-  }
+h1 {
+font-size: 2.8em;
+color: #3f9656;
+margin-bottom: 8px;
+}
 
-  #age {
-    color: #2f2f2f;
-    font-weight: 600;
-  }
+#age {
+color: #2f2f2f;
+font-weight: 600;
+}
 
-  /* 📦 Info Container */
-  .info-container {
-    background: #ffffffcc;
-    border-radius: 30px;
-    padding: 35px 40px;
-    margin: 20px auto;
-    max-width: 780px;
-    width: 85%;
-    box-shadow: 0 6px 25px rgba(0,0,0,0.08);
-    backdrop-filter: blur(6px);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+/* 📦 Info Container */
+.info-container {
+background: #ffffff;
+border-radius: 30px;
+padding: 35px 40px;
+margin: 20px auto;
+max-width: 780px;
+width: 85%;
+box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-  .info-container:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(63,150,86,0.25);
-  }
+.info-container:hover {
+transform: translateY(-4px);
+box-shadow: 0 8px 30px rgba(63,150,86,0.25);
+}
 
-  h2 {
-    color: #3f9656;
-    margin-bottom: 12px;
-    font-size: 1.6em;
-    border-bottom: 2px solid #d4f0d6;
-    display: inline-block;
-    padding-bottom: 4px;
-  }
+h2 {
+color: #3f9656;
+margin-bottom: 12px;
+font-size: 1.6em;
+border-bottom: 2px solid #d4f0d6;
+display: inline-block;
+padding-bottom: 4px;
+}
 
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0 25px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
+ul {
+list-style: none;
+padding: 0;
+margin: 10px 0 25px;
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+}
 
-  ul li {
-    background: #dff5e1;
-    border: 1px solid #c7ecc9;
-    padding: 10px 16px;
-    border-radius: 15px;
-    font-weight: 500;
-    transition: background 0.3s, transform 0.2s;
-    flex: 1 1 40%;
-    text-align: center;
-  }
+ul li {
+background: #dff5e1;
+border: 1px solid #c7ecc9;
+padding: 10px 16px;
+border-radius: 15px;
+font-weight: 500;
+transition: background 0.3s, transform 0.2s;
+flex: 1 1 40%;
+text-align: center;
+}
 
-  ul li:hover {
-    background: #c9efcb;
-    transform: translateY(-2px);
-  }
+ul li:hover {
+background: #c9efcb;
+transform: translateY(-2px);
+}
 
-  .colour-square {
-    width: 40px;
-    height: 40px;
-    background: #3f9656;
-    border-radius: 10px;
-    margin-top: 10px;
-    border: 2px solid #b4e3b6;
-  }
+.colour-square {
+width: 40px;
+height: 40px;
+background: #3f9656;
+border-radius: 10px;
+margin-top: 10px;
+border: 2px solid #b4e3b6;
+}
 
-  /* 🎥 Footer */
-  footer {
-    text-align: center;
-    padding: 40px 20px 60px;
-  }
+/* 🎥 Embeds */
+.embed {
+background: #ffffff;
+border-radius: 20px;
+padding: 25px;
+margin: 25px 0;
+box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
 
-  .embed {
-    background: #ffffff;
-    border-radius: 20px;
-    padding: 25px;
-    margin: 25px auto;
-    max-width: 780px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  }
 
-  /* YouTube embed */
-  .yt-embed {
-    background: #f9fff9;
-    border: 1px solid #b5e4b8;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-    padding: 15px;
-    text-decoration: none;
-    color: #222;
-    transition: background 0.3s;
-  }
+/* YouTube embed */
+.yt-embed {
+background: #f9fff9;
+border: 1px solid #b5e4b8;
+border-radius: 20px;
+display: flex;
+align-items: center;
+justify-content: flex-start;
+width: 100%;
+padding: 15px;
+text-decoration: none;
+color: #222;
+transition: background 0.3s;
+box-sizing: border-box;
+}
 
-  .yt-embed:hover {
-    background: #e7f9e8;
-  }
+.yt-embed:hover {
+background: #e7f9e8;
+}
 
-  .yt-embed img {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    margin-right: 18px;
-  }
+.yt-embed img {
+width: 64px;
+height: 64px;
+border-radius: 50%;
+margin-right: 18px;
+}
 
-  .yt-text h2 {
-    margin: 0;
-    color: #3f9656;
-  }
+.yt-text h2 {
+margin: 0;
+color: #3f9656;
+font-size: 1.3em;
+}
 
-  .yt-text p {
-    margin: 3px 0 0;
-    color: #555;
-    font-size: 0.9em;
-  }
+.yt-text p {
+margin: 3px 0 0;
+color: #555;
+font-size: 0.9em;
+}
 
-  /* ✨ Fade In Animation */
-  header, .info-container, footer {
-    opacity: 0;
-    transform: translateY(15px);
-    animation: fadeIn 0.8s ease forwards;
-  }
+/* ✨ Fade In Animation */
+header, .info-container {
+opacity: 0;
+transform: translateY(15px);
+animation: fadeIn 0.8s ease forwards;
+}
 
-  header { animation-delay: 0.2s; }
-  .info-container:nth-of-type(1) { animation-delay: 0.4s; }
-  .info-container:nth-of-type(2) { animation-delay: 0.6s; }
-  footer { animation-delay: 0.8s; }
+header { animation-delay: 0.2s; }
+.info-container { animation-delay: 0.4s; }
 
-  @keyframes fadeIn {
-    to {
-      opacity: 100;
-      transform: translateY(0);
-    }
-  }
+@keyframes fadeIn {
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
 </style>
+
 </head>
 <body>
 
@@ -227,17 +223,10 @@ background-blend-mode: multiply;
   </ul>
 
   <div class="embed">
-    <!-- TikTok -->
-    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@ty.connor29" data-unique-id="ty.connor29" data-embed-from="embed_page" data-embed-type="creator" style="max-width:780px; min-width:288px;"> 
-      <section> 
-        <a target="_blank" href="https://www.tiktok.com/@ty.connor29?refer=creator_embed">@ty.connor29</a> 
-      </section> 
-    </blockquote> 
-    <script async src="https://www.tiktok.com/embed.js"></script>
+   <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@ty.connor29" data-unique-id="ty.connor29" data-embed-from="oembed" data-embed-type="creator" style="max-width:780px; min-width:288px;"> <section> <a target="_blank" href="https://www.tiktok.com/@ty.connor29?refer=creator_embed">@ty.connor29</a> </section> </blockquote> <script async onerror="var a=document.createElement('script');a.src='https://iframely.net/files/tiktok-embed.js';document.body.appendChild(a);" src="https://www.tiktok.com/embed.js"></script>
   </div>
 
   <div class="embed">
-    <!-- YouTube -->
     <a class="yt-embed" href="https://www.youtube.com/@IRLcabbage" target="_blank">
       <img src="https://www.gstatic.com/youtube/img/branding/youtubelogo/svg/youtubelogo.svg" alt="YouTube Logo">
       <div class="yt-text">
