@@ -5,98 +5,125 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>All About Tyler</title>
 <style>
+  /* 🌿 General Theme */
   body {
     background-color: #e6f7e7;
-    opacity: 0.95;
     background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #e6f7e7 10px), repeating-linear-gradient(#30ac5b55, #30ac5b);
     font-family: 'Poppins', sans-serif;
-    color: #222;
+    color: #2c2c2c;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
+  /* 🧑‍💻 Header Section */
   header {
     text-align: center;
-    padding: 50px 20px 20px;
+    padding: 60px 20px 40px;
+    max-width: 900px;
+    width: 90%;
   }
 
   .pfp {
-    width: 150px;
-    height: 150px;
-    background-color: #d1f0d5;
+    width: 160px;
+    height: 160px;
+    background-color: #d9f4dc;
     border: 5px solid #3f9656;
     border-radius: 50%;
-    margin: 0 auto 20px;
+    margin: 0 auto 25px;
     background-image: url('pfp.png');
     background-size: cover;
     background-position: center;
+    box-shadow: 0 4px 15px rgba(63,150,86,0.2);
   }
 
   h1 {
-    font-size: 2.5em;
+    font-size: 2.8em;
     color: #3f9656;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
 
-  p {
-    font-size: 1.2em;
+  #age {
+    color: #2f2f2f;
+    font-weight: 600;
   }
 
+  /* 🌼 Section Cards */
   section {
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 20px;
-    margin: 20px auto;
-    padding: 20px;
-    max-width: 700px;
-    box-shadow: 0 4px 10px rgba(63, 150, 86, 0.2);
+    background: #ffffffbb;
+    border-radius: 25px;
+    margin: 25px auto;
+    padding: 25px 30px;
+    max-width: 750px;
+    width: 85%;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  section:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(63,150,86,0.25);
   }
 
   section h2 {
     color: #3f9656;
     margin-bottom: 10px;
+    font-size: 1.6em;
+  }
+
+  section p {
+    font-size: 1.1em;
   }
 
   ul {
     list-style: none;
     padding: 0;
+    margin: 0;
   }
 
   ul li {
     background: #dff5e1;
-    border: 1px solid #b5e4b8;
-    padding: 10px;
+    border: 1px solid #c7ecc9;
+    padding: 12px 16px;
     margin: 8px 0;
-    border-radius: 12px;
-    transition: transform 0.2s;
+    border-radius: 15px;
+    font-weight: 500;
+    transition: background 0.3s, transform 0.2s;
   }
 
   ul li:hover {
-    transform: scale(1.02);
+    background: #c9efcb;
+    transform: translateX(5px);
   }
 
+  /* 🎥 Social Media Embeds */
   footer {
     text-align: center;
-    padding: 40px 10px;
+    padding: 40px 20px 60px;
   }
 
   .embed {
-    background: #f0fff0;
-    border-radius: 15px;
-    padding: 20px;
-    margin: 20px auto;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 25px;
+    margin: 25px auto;
     max-width: 780px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
   }
 
+  /* YouTube Embed Style */
   .yt-embed {
     background: #f9fff9;
     border: 1px solid #b5e4b8;
-    border-radius: 15px;
+    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     width: 100%;
-    padding: 12px;
+    padding: 15px;
     text-decoration: none;
     color: #222;
     transition: background 0.3s;
@@ -110,7 +137,7 @@
     width: 64px;
     height: 64px;
     border-radius: 50%;
-    margin-right: 15px;
+    margin-right: 18px;
   }
 
   .yt-text h2 {
@@ -122,6 +149,28 @@
     margin: 3px 0 0;
     color: #555;
     font-size: 0.9em;
+  }
+
+  /* 🌸 Fade-in Animation */
+  header, section, footer {
+    opacity: 0;
+    transform: translateY(15px);
+    animation: fadeIn 0.8s ease forwards;
+  }
+
+  header { animation-delay: 0.2s; }
+  section:nth-of-type(1) { animation-delay: 0.4s; }
+  section:nth-of-type(2) { animation-delay: 0.5s; }
+  section:nth-of-type(3) { animation-delay: 0.6s; }
+  section:nth-of-type(4) { animation-delay: 0.7s; }
+  section:nth-of-type(5) { animation-delay: 0.8s; }
+  footer { animation-delay: 1s; }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 </style>
 </head>
@@ -199,7 +248,7 @@
 </footer>
 
 <script>
-  // Auto age updater
+  // Auto-updating age calculation
   function calculateAge(birthDate) {
     const today = new Date();
     let age = today.getFullYear() - birthDate.getFullYear();
