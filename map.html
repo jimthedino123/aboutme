@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Town/City/Village Borders</title>
+
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+<style>
+  html,body { margin:0; height:100%; }
+  #map { height:100%; width:100%; }
+  #status {
+    position:absolute; top:10px; left:10px; z-index:1000;
+    background:white; padding:8px 12px; border-radius:6px;
+    font-family:sans-serif; font-size:14px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.2);
+  }
+</style>
+</head>
+<body>
+
+<div id="status">Move the map to load borders…</div>
+<div id="map"></div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+const map = L.map("map").setView([52.6,-1.5], 8);
+
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  maxZoom:19,
+  attribution:"© OpenStreetMap"
+}).addTo(map);
+
+const borderLayer = L.geoJSON(null, {
+  style: {
+    color:"#d12",
+    weight:2,
+    fill:false
+  }
+}).addTo(map);
+
+const status = document.getElementById("status");
+
+let fetchTimer = null;
+
+map.on("moveend", () => {
+  if (fetchTimer) clearTimeout(fetchTimer);
+  fetchTimer = setTimeout(loadBorders, 600);
+});
+
+async function loadBorders() {
+  status.textContent = "Loading…";
+
+  const b = map.getBounds();
+  const bbox = `${b.getSouth()},${b.getWest()},${b.getNorth()},${b.getEast()}`;
+
+  const query = `
+    [out:json][timeout:25];
+    (
+      relation["boundary"="administrative"]["admin_level"~"^(6|7|8|9|10)$"](${bbox});
+    );
+    out geom;
+  `;
+
+  try {
+    const r = await fetch("https://overpass-api.de/api/interpreter", {
+      method:"POST",
+      body:query
+    });
+    const json = await r.json();
+
+    borderLayer.clearLayers();
+
+    json.elements.forEach(el => {
+      if (el.type === "relation" && el.members) {
+        const coords = el.members
+          .filter(m => m.geometry)
+          .map(m => m.geometry.map(g => [g.lat, g.lon]));
+
+        if (coords.length > 0) {
+          L.polygon(coords, {
+            color:"#d12",
+            weight:2,
+            fill:false
+          }).bindPopup(el.tags.name || "Unnamed boundary").addTo(borderLayer);
+        }
+      }
+    });
+
+    status.textContent = `Loaded ${json.elements.length} borders`;
+  } catch (err) {
+    console.error(err);
+    status.textContent = "Error loading borders";
+  }
+}
+</script>
+</body>
+</html>
